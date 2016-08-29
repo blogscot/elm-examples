@@ -41,7 +41,7 @@ init : Model
 init =
     { name = ""
     , checkboxes =
-        -- We store the the state for modules in a Dictionary
+        -- We store the state for modules in a Dictionary
         Dict.fromList
             [ "advertising"
                 => { name = "Advertising"
@@ -66,7 +66,7 @@ init =
 type Msg
     = Check String Bool
 
-
+update : Msg -> Model -> Model
 update msg model =
     case msg of
         Check checkboxId checked ->

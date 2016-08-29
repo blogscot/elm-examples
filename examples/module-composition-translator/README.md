@@ -20,12 +20,12 @@ type Msg
 -- Tagger function, for better control over the message flow.
 
 
-tagger : Child.Msg -> Msg 
+tagger : Child.Msg -> Msg
 tagger msg =
     case msg of
         Child.SomeMsg ->
             SomeMsg
-            
+
         _ ->
             ToChild msg
 
@@ -36,12 +36,12 @@ tagger msg =
 view : Model -> Html Msg
 view model =
     Cmd.map tagger (Child.view model.childState)
-    
+
 ```
 
 ## Building the example
 
 ```sh
-$ elm-package istall -y
+$ elm-package install -y
 $ elm-make Main.elm
 ```
